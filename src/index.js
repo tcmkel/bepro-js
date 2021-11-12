@@ -7,6 +7,8 @@ import ERC721Collectibles from './models/ERC721/ERC721Collectibles';
 import ERC721Standard from './models/ERC721/ERC721Standard';
 import Network from './models/BEPRO/Network';
 import { VotingContract } from './models';
+import PredictionMarketContract from './models/PredictionMarketContract';
+import RealitioERC20Contract from './models/RealitioERC20Contract';
 
 export {
   Application,
@@ -18,4 +20,6 @@ export {
   ERC20TokenLock,
   ERC721Collectibles,
   ERC721Standard,
+  PredictionMarketContract,
+  RealitioERC20Contract,
 };

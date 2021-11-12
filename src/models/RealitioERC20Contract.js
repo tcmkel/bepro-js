@@ -1,5 +1,4 @@
 import moment from 'moment';
-
 import { realitio } from '../interfaces';
 import Numbers from '../utils/Numbers';
 import IContract from './IContract';

@@ -5,13 +5,13 @@ import moment from 'moment';
 
 import { mochaAsync } from './utils';
 import { Application } from '..';
-
+import { ERC20Contract, } from "../build";
 context('Prediction Market Contract', async () => {
   require('dotenv').config();
 
   let app;
   let predictionMarketContract;
-  let realitioERC20Contract
+  let realitioERC20Contract;
   let ERC20Contract;
 
   // market / outcome ids we'll make unit tests with
