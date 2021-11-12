@@ -7,8 +7,8 @@ import OpenerRealFvr from './custom/RealFvr/OpenerRealFvr';
 import Network from './BEPRO/Network';
 import NetworkFactory from './BEPRO/NetworkFactory';
 import VotingContract from './Voting/VotingContract';
-import RealitioERC20Contract from './Fanspredict/RealitioERC20Contract';
-import PredictionMarketContract from './Fanspredict/PredictionMarketContract';
+import RealitioERC20Contract from './RealitioERC20Contract';
+import PredictionMarketContract from './PredictionMarketContract';
 
 export {
   ERC20Contract,

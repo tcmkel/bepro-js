@@ -1,9 +1,9 @@
 import moment from 'moment';
 
 // const prediction = require("../../interfaces").prediction;
-import { prediction } from '../../interfaces';
-import Numbers from '../../utils/Numbers';
-import IContract from '../IContract';
+import { prediction } from '../interfaces';
+import Numbers from '../utils/Numbers';
+import IContract from './IContract';
 
 const realitioLib = require('@reality.eth/reality-eth-lib/formatters/question');
 
