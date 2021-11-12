@@ -1,4 +1,3 @@
-var fs = require("fs");
 const _ = require("lodash");
 const web = require("web3");
 
