@@ -9,23 +9,11 @@ module.exports = {
       port: 8545,
       network_id: "*" // Match any network id
     },
-    moonriver: {
+    leprichain: {
       provider: function() {
-        return new HDWalletProvider(mnemonic, "https://rpc.moonriver.moonbeam.network");
+        return new HDWalletProvider(mnemonic, "https://node.leprichain.blockwell.ai");
       },
-      network_id: 1285
-    },
-    moonalpha: {
-      provider: function() {
-        return new HDWalletProvider(mnemonic, "https://rpc.testnet.moonbeam.network");
-      },
-      network_id: 1287
-    },
-    kovan: {
-      provider: function() {
-        return new HDWalletProvider(mnemonic, "https://kovan.infura.io/v3/37ec248f2a244e3ab9c265d0919a6cbc");
-      },
-      network_id: 42
+      network_id: 49777
     }
   },
   // Configure your compilers
