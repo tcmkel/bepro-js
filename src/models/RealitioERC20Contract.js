@@ -1,7 +1,8 @@
 import moment from 'moment';
-import { realitio } from '../interfaces';
+import { realitio, staking } from '../interfaces';
 import Numbers from '../utils/Numbers';
 import IContract from './IContract';
+import ERC20Contract from './ERC20/ERC20Contract';
 
 /**
  * RealitioERC20 Contract Object
@@ -15,6 +16,37 @@ class RealitioERC20Contract extends IContract {
   constructor(params) {
     super({ abi: realitio, ...params });
   }
+
+  /**
+   * @async
+   * @function
+   * @throws {Error} Contract is not deployed, first deploy it and provide a contract address
+   * @void
+   */
+  __assert = async () => {
+    if (!this.getAddress()) {
+      throw new Error(
+        'Contract is not deployed, first deploy it and provide a contract address',
+      );
+    }
+    /* Use ABI */
+    this.params.contract.use(this.params.abi, this.getAddress());
+  };
+
+  /**
+   * Deploy the Staking Contract
+   * @function
+   * @param [Object] params
+   * @param {function():void} params.callback
+   * @return {Promise<*>}
+   */
+  deploy = async ({ callback } = {}) => {
+    const params = [];
+    const res = await this.__deploy(params, callback);
+    /* Call to Backend API */
+    await this.__assert();
+    return res;
+  };
 
   /**
 	 * @function getQuestion
