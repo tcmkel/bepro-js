@@ -7,4 +7,5 @@ context("Unit Tests", async () => {
   require('./dexStorage');
   require("./erc20TokenLock");
   require("./stakingContract");
+  require("./predictionMarketContract");
 });
