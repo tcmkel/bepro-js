@@ -36,7 +36,7 @@ class PredictionMarketContract extends IContract {
    * @throws {Error} Contract is not deployed, first deploy it and provide a contract address
    * @void
    */
-  __assert = async () => {
+  async __assert() {
     if (!this.getAddress()) {
       throw new Error(
         'Contract is not deployed, first deploy it and provide a contract address',
@@ -44,7 +44,7 @@ class PredictionMarketContract extends IContract {
     }
     /* Use ABI */
     this.params.contract.use(this.params.abi, this.getAddress());
-  };
+  }
 
   /**
    * Deploy the Staking Contract
@@ -53,15 +53,15 @@ class PredictionMarketContract extends IContract {
    * @param {function():void} params.callback
    * @return {Promise<*>}
    */
-  deploy = async ({
+  async deploy({
     fee, tokenAddress, requiredBalance, realitioAddress, realitioTimeout, callback,
-  } = {}) => {
+  } = {}) {
     const params = [];
     const res = await this.__deploy(params, callback);
     /* Call to Backend API */
     await this.__assert();
     return res;
-  };
+  }
 
 
   /* Get Functions */

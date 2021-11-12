@@ -23,7 +23,7 @@ class RealitioERC20Contract extends IContract {
    * @throws {Error} Contract is not deployed, first deploy it and provide a contract address
    * @void
    */
-  __assert = async () => {
+  async __assert() {
     if (!this.getAddress()) {
       throw new Error(
         'Contract is not deployed, first deploy it and provide a contract address',
@@ -31,7 +31,7 @@ class RealitioERC20Contract extends IContract {
     }
     /* Use ABI */
     this.params.contract.use(this.params.abi, this.getAddress());
-  };
+  }
 
   /**
    * Deploy the Staking Contract
@@ -40,13 +40,13 @@ class RealitioERC20Contract extends IContract {
    * @param {function():void} params.callback
    * @return {Promise<*>}
    */
-  deploy = async ({ callback } = {}) => {
+  async deploy({ callback } = {}) {
     const params = [];
     const res = await this.__deploy(params, callback);
     /* Call to Backend API */
     await this.__assert();
     return res;
-  };
+  }
 
   /**
 	 * @function getQuestion
