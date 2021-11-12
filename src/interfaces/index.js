@@ -9,6 +9,9 @@ const index = {
   network: require('../contracts/Network.json'),
   networkFactory: require('../contracts/NetworkFactory.json'),
   openerRealFvr: require('../contracts/OpenerRealFvr.json'),
+  prediction: require('../contracts/PredictionMarket.json'),
+  realitio: require('../contracts/RealitioERC20.json'),
+
 };
 
 module.exports = index;

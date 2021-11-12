@@ -1,3 +1,7 @@
+require('dotenv').config()
+var HDWalletProvider = require("truffle-hdwallet-provider");
+var mnemonic = process.env.TRUFFLE_MNEMONIC;
+
 module.exports = {
   networks: {
     development: {
@@ -5,6 +9,12 @@ module.exports = {
       port: 8545,
       network_id: '*', // Match any network id
     },
+    leprichain: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, "https://node.leprichain.blockwell.ai");
+      },
+      network_id: 49777
+    }
   },
   // config custom test folder for smart contracts
   test_directory: './tests/contracts',
