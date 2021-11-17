@@ -13,6 +13,7 @@ module.exports = {
       provider: function() {
         return new HDWalletProvider(mnemonic, "https://node.leprichain.blockwell.ai");
       },
+      gas: 200000,
       gasPrice: 0,
       network_id: 49777
     }
