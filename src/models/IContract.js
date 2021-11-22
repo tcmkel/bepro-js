@@ -72,6 +72,10 @@ class IContract {
 			reject(err);
 		});
 	};
+	
+	getABI(){
+	return this.params.abi;
+	}
 
 	async __sendTx(f, call = false, value, callback=()=>{}) {
 		try{
