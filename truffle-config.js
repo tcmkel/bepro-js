@@ -7,18 +7,22 @@ module.exports = {
     development: {
       host: "127.0.0.1",
       port: 8545,
-      gas: 4500000,
-      gasPrice:0,
       network_id: "*" // Match any network id
     },
-    leprichain: {
+    kovan: {
       provider: function() {
-        return new HDWalletProvider(mnemonic, "https://node.leprichain.blockwell.ai");
+        return new HDWalletProvider(mnemonic, "https://kovan.infura.io/v3/37ec248f2a244e3ab9c265d0919a6cbc");
       },
-      gas: 200000,
-      gasPrice: 0,
-      network_id: 49777
+      network_id: 42
     }
+//     leprichain: {
+//       provider: function() {
+//         return new HDWalletProvider(mnemonic, "https://node.leprichain.blockwell.ai");
+//       },
+//       gas: 200000,
+//       gasPrice: 0,
+//       network_id: 49777
+//     }
   },
   // Configure your compilers
   compilers: {
